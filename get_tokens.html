@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+        <link rel="stylesheet" href="assets/css/app.css">
+        <link rel="stylesheet" href="assets/css/app-dark.css">
+        <link rel="stylesheet" href="assets/css/iconly.css">
+        <link rel="stylesheet" href="assets/css/toastify.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 py-lg-5">
+                <div class="container">
+                    <a href="home" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img src="assets/images/logo/user-logo.png" class="img img-fluid nav-logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+                            <li><a href="about-us" class="nav-link px-2 nav-link-custom">About Us</a></li>
+                            <li><a href="campaigns" class="nav-link px-2 nav-link-custom">CAMPAIGNS</a></li>
+                            <li><a href="volunteer" class="nav-link px-2 nav-link-custom">VOLUNTEER</a></li>
+                            <li><a href="shop" class="nav-link px-2 nav-link-custom">SHOP</a></li>
+                            <li><a href="blogs" class="nav-link px-2 nav-link-custom">BLOG</a></li>
+                            <li><a href="contact-us" class="nav-link px-2 nav-link-custom">CONTACT US</a></li>
+                        </ul>
+                        <div class="d-flex flex-row justify-content-center align-items-center nav-right gap-3">
+                            <a href="" class="d-none">
+                                <img src="assets/images/icons/search.png" class="img img-fluid nav-icon">
+                            </a>
+                            <a href="">
+                                <img src="assets/images/icons/user.png" class="img img-fluid nav-icon">
+                            </a>
+                            <a href="cart"><img src="assets/images/icons/cart.png" class="img img-fluid nav-icon">
+                                <span class="notification text-center" id="cart-count">{{ count((session()->has('cart') ? session()->get('cart') : [])) }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+        <div class="container py-5 mt-4 mt-lg-5 mb-lg-4 my-xl-5">
+            <div class="row pt-sm-2 pt-lg-0">
+                <div class="col-lg-3 pe-lg-4 pe-xl-5 mt-n3">
+                    <aside>
+                        <div class="position-lg-sticky top-0">
+                            <div class="offcanvas-lg offcanvas-start" id="sidebarAccount">
+                                <button class="btn-close position-absolute top-0 end-0 mt-3 me-3 d-lg-none" type="button"
+                                    data-bs-dismiss="offcanvas" data-bs-target="#sidebarAccount" aria-label="Close"></button>
+                                <div class="offcanvas-body">
+                                    <div class="pb-2 pb-lg-0 mb-4 mb-lg-5">
+                                        <img class="d-block rounded-circle mb-2 profile-picture" src=""
+                                            onerror="this.onerror=null;this.src='http://127.0.0.1:8000/assets/images/default.png';"
+                                            width="80">
+                                        <h3 class="h5 mb-1 font-typographica">Sohail Khan</h3>
+                                        <p class="fs-sm text-body-secondary mb-0 font-typographica">mailtosohailkhan@gmail.com</p>
+                                    </div>
+                                    <nav class="nav flex-column pb-2 pb-lg-4">
+                                        <h4 class="fs-xs fw-medium text-body-secondary text-uppercase pb-1 mb-2">Account</h4>
+                                        <a href="dashboard.html" class="nav-link fw-semibold py-2 px-0 sidebar-link">
+                                            <i class="ai-dashboard fs-5 opacity-60 me-2"></i>
+                                            Dashboard
+                                        </a>
+                                        <a href="get_tokens.html" class="nav-link fw-semibold py-2 px-0 sidebar-link">
+                                            <i class="ai-search fs-5 opacity-60 me-2"></i>
+                                            Get Tokens
+                                        </a>
+                                        <a href="send_tokens.html" class="nav-link fw-semibold py-2 px-0 sidebar-link">
+                                            <i class="ai-search fs-5 opacity-60 me-2"></i>
+                                            Send Tokens
+                                        </a>
+                                        <a href="md_tree_members.html" class="nav-link fw-semibold py-2 px-0 sidebar-link">
+                                            <i class="ai-heart fs-5 opacity-60 me-2"></i>
+                                            Family Tree
+                                        </a>
+                                        <a href="profile.html" class="nav-link fw-semibold py-2 px-0">
+                                            <i class="ai-user-check fs-5 opacity-60 me-2"></i>
+                                            Profile
+                                        </a>
+                                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                            class="nav-link fw-semibold py-2 px-0">
+                                            <i class="ai-logout fs-5 opacity-60 me-2"></i>
+                                            Sign out
+                                        </a>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="col-lg-9 pb-2 pb-sm-4">
+                    <section>
+                        <div class="card shadow-sm border-0 p-5">
+                            <div class="card-body">
+                                <div class="d-flex flex-column flex-md-row justify-content-between">
+                                    <div>
+                                        <h2>Get Tokens</h2>
+                                        <p class="subscribe-label mt-4">Amount of token you want to purchase</p>
+                                        <p class="subscribe-label">Amount &nbsp &nbsp &nbsp = &nbsp &nbsp &nbsp Token amount</p>
+                                        <div class="d-flex">
+                                            <div class="form-check d-flex flex-row  align-items-center mt-4 px-0">
+                                                <label class="form-check-label border border-1 px-3 py-2 rounded-4 border-black donation-amount">£10</label>
+                                            </div>
+                                            <div style="width: 50px;"></div>
+                                            <div class="form-check d-flex flex-row  align-items-center mt-4 px-0">
+                                                <label class="form-check-label border border-1 px-3 py-2 rounded-4 border-black donation-amount">1000</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-5" id="custom-amount">
+                                    <input type="number" step="0.01" class="form-control input-common" name="custom_amount" id="custom_amount" placeholder="Enter Amount">
+                                </div>
+                                <hr class="mt-5 mb-5">
+                                <h5>Payment</h5>
+                                <div class="card mt-3">
+                                    <div class="card-body border border-1 rounded-4 p-2 p-lg-4">
+                                        <div class="form-check d-flex flex-row align-items-center border-bottom">
+                                            <label class="form-check-label px-3 py-3 rounded-4" for="paypal">
+                                                <input type="radio" name="payment_method" value="paypal" id="paypal" checked class="form-check-input payment-input mt-2">
+                                                <span>
+                                                    <img src="assets/images/paypal.png" class="img img-fluid">
+                                                </span> PayPal
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex flex-row align-items-center mt-4">
+                                            <label class="form-check-label px-3 py-3 rounded-4" for="credit">
+                                                <input type="radio" name="payment_method" value="credit" id="credit" class="form-check-input payment-input mt-2">
+                                                <span>
+                                                    <img src="assets/images/credit_card.png" class="img img-fluid">
+                                                </span> Credit or debit
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="your-donation mt-5">
+                                    <h5>Your donation</h5>
+                                    <div>
+                                        <p>Your donation <span class="float-end donation-amount">£1.25</span></p>
+                                        <p class="pt-4">Total due today <span class="float-end donation-amount">£1.25</span></p>
+                                    </div>
+                                    <p>By choosing the payment method above, you agree to the Mustard Deeds <a href="" class="text-black text-decoration-underline">Terms of Service</a> and acknowledge the <a href="" class="text-black text-decoration-underline">Privacy Notice</a>.</p>
+                                </div>
+                                <button type="submit" class="btn w-50 rounded-5 py-3 mt-4 w-100" id="btn-paypal">
+                                    <img src="assets/images/paypal.png" class="img img-fluid"><span class="text-black">Paypal</span>
+                                    <div class="spinner-border d-none spinner-border-sm m-l-1" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div class="card shadow-sm border-0">
+                            <div class="card-body">
+                                <h2>Thank you</h2>
+                                <p class="subscribe-label">Your tokens are now in your account. May Allah Reward you in this life and the next. Ameen</p>
+                            </div>
+                        </div> -->
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/font-awesome.min.js"></script>
+        <script src="assets/js/toastify.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+
+        <link rel="stylesheet" href="assets/css/app.css">
+        <link rel="stylesheet" href="assets/css/app-dark.css">
+        <link rel="stylesheet" href="assets/css/iconly.css">
+        <link rel="stylesheet" href="assets/css/toastify.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+
+        <div class="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 py-lg-5">
+                <div class="container">
+                    <a href="home" class="d-flex align-items-center col-md-2 mb-2 mb-md-0 text-dark text-decoration-none">
+                        <img src="assets/images/logo/user-logo.png" class="img img-fluid nav-logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+                            <li><a href="about-us" class="nav-link px-2 nav-link-custom">About Us</a></li>
+                            <li><a href="campaigns" class="nav-link px-2 nav-link-custom">CAMPAIGNS</a></li>
+                            <li><a href="volunteer" class="nav-link px-2 nav-link-custom">VOLUNTEER</a></li>
+                            <li><a href="shop" class="nav-link px-2 nav-link-custom">SHOP</a></li>
+                            <li><a href="blogs" class="nav-link px-2 nav-link-custom">BLOG</a></li>
+                            <li><a href="contact-us" class="nav-link px-2 nav-link-custom">CONTACT US</a></li>
+                        </ul>
+                        <div class="d-flex flex-row justify-content-center align-items-center nav-right gap-3">
+                            <a href="" class="d-none">
+                                <img src="assets/images/icons/search.png" class="img img-fluid nav-icon">
+                            </a>
+                            <a href="">
+                                <img src="assets/images/icons/user.png" class="img img-fluid nav-icon">
+                            </a>
+                            <a href="cart"><img src="assets/images/icons/cart.png" class="img img-fluid nav-icon">
+                                <span class="notification text-center" id="cart-count">{{ count((session()->has('cart') ? session()->get('cart') : [])) }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+
+
+     
+
+
+
+
+        <script src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/app.js"></script>
+        <script src="assets/js/font-awesome.min.js"></script>
+        <script src="assets/js/toastify.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+
+</html>
